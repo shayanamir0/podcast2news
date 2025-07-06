@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build --output public",
+    "build": "next build",
     "start": "next start",
-    "lint": "next lint""scripts":
+    "lint": "next lint"
   },
   "dependencies": {
     "next": "14.0.0",

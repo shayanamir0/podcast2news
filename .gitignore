@@ -100,4 +100,7 @@ coverage.xml
 # Document files (temporary)
 *.docx
 *.txt
-downloads/ 
+downloads/
+
+# Project documentation (keep local only)
+README.md 

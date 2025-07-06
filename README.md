@@ -156,6 +156,64 @@ NEXT_PUBLIC_API_URL=http://localhost:8000
 - **Temporary File Cleanup**: Automatically removes generated files after download
 - **Environment-based Configuration**: Separates development and production settings
 
+## Docker Deployment
+
+### Local Development with Docker
+
+1. **Using Docker Compose (Recommended)**:
+```bash
+# Build and start both frontend and backend
+docker-compose up --build
+
+# Or run in detached mode
+docker-compose up -d --build
+```
+
+2. **Backend Only**:
+```bash
+# Build and run backend container
+./deploy-backend.sh
+
+# Or manually:
+cd backend
+docker build -t podcast2news-backend .
+docker run -d -p 8000:8000 --env-file .env podcast2news-backend
+```
+
+### Production Deployment
+
+1. **Cloud Deployment (Railway, Heroku, etc.)**:
+```bash
+# Use the production docker-compose file
+docker-compose -f docker-compose.prod.yml up -d
+
+# Or deploy backend only
+cd backend
+docker build -t podcast2news-backend .
+docker run -d -p 8000:8000 --env-file .env podcast2news-backend
+```
+
+2. **Frontend Deployment to Vercel**:
+   - Connect your GitHub repository to Vercel
+   - Set environment variable: `NEXT_PUBLIC_API_URL=https://your-backend-url.com`
+   - Deploy automatically on push
+
+### Docker Commands
+
+```bash
+# View running containers
+docker ps
+
+# View logs
+docker logs podcast2news-backend-container
+
+# Stop containers
+docker-compose down
+
+# Rebuild after changes
+docker-compose up --build
+```
+
 ## License
 
 MIT License

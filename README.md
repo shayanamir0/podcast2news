@@ -1,6 +1,4 @@
 
----
-
 ## Tech Stack
 
 - **Frontend:** Next.js, React, TypeScript, Tailwind CSS
@@ -25,28 +23,40 @@ For local development, simply run:
 
 ## Deployment & Hosting
 
-### Frontend (Vercel)
+### Step 1: Clone the Repository
 
-1. **Push the `frontend/` directory to a GitHub repository.**
-2. **Import the repository into [Vercel](https://vercel.com/).**
+First, clone the repository to your local machine or your own GitHub account (fork if needed):
+
+```bash
+git clone https://github.com/yourusername/podcast2news.git
+cd podcast2news
+```
+
+---
+
+### Step 2: Deploy the Frontend (Vercel)
+
+1. **Push the `frontend/` directory to your GitHub repository** (if you haven’t already).
+2. **Import your repository into [Vercel](https://vercel.com/):**
+   - Select the `frontend/` directory as the project root during setup.
 3. **Set the environment variable in the Vercel dashboard:**
 
    ```
    NEXT_PUBLIC_API_URL=https://your-backend-url.up.railway.app
    ```
 
-   Replace with your actual backend URL from Railway.
+   Replace with your actual backend URL from Railway (see next step).
 
 4. **Deploy!**  
    Vercel will handle the build and deployment automatically.
 
 ---
 
-### Backend (Railway)
+### Step 3: Deploy the Backend (Railway)
 
-1. **Push the `backend/` directory to a GitHub repository.**
+1. **Push the `backend/` directory to your GitHub repository** (if you haven’t already).
 2. **Create a new project on [Railway](https://railway.app/).**
-3. **Connect your GitHub repository.**
+3. **Connect your GitHub repository to Railway.**
 4. **Set the following environment variables in the Railway dashboard:**
 
    ```
@@ -62,7 +72,7 @@ For local development, simply run:
    - `ALLOWED_ORIGINS` should include your Vercel frontend URL.
 
 5. **Deploy the backend.**
-6. **Copy the public URL provided by Railway and use it as `NEXT_PUBLIC_API_URL` in your Vercel frontend.**
+6. **Copy the public URL provided by Railway and use it as `NEXT_PUBLIC_API_URL` in your Vercel frontend’s environment variables.**
 
 ---
 
